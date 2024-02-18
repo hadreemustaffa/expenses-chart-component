@@ -1,43 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Expenses Chart Component solution for frontendmentor.io Junior Challenge">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Expenses chart component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Expenses Chart Component</title>
 </head>
+
 <body>
+  <main>
+    <div class="balance">
+      <div class="balance__text">
+        <p>My balance</p>
+        <p class="balance__total"></p>
+      </div>
+    </div>
 
-  My balance
-  $921.48
+    <div class="info">
+      <div class="info__chart">
+        <h2 class="info__chart-title">Spending - Last 7 days</h2>
+        <ul class="info__chart-bar">
+          <li>
+            <p class="bar__total"></p>
+            <div class="bar__block"></div>
+            <p class="bar__day"></p>
+          </li>
+          <li>
+            <p class="bar__total"></p>
+            <div class="bar__block"></div>
+            <p class="bar__day"></p>
+          </li>
+          <li>
+            <p class="bar__total"></p>
+            <div class="bar__block"></div>
+            <p class="bar__day"></p>
+          </li>
+          <li>
+            <p class="bar__total"></p>
+            <div class="bar__block"></div>
+            <p class="bar__day"></p>
+          </li>
+          <li>
+            <p class="bar__total"></p>
+            <div class="bar__block"></div>
+            <p class="bar__day"></p>
+          </li>
+          <li>
+            <p class="bar__total"></p>
+            <div class="bar__block"></div>
+            <p class="bar__day"></p>
+          </li>
+          <li>
+            <p class="bar__total"></p>
+            <div class="bar__block"></div>
+            <p class="bar__day"></p>
+          </li>
+        </ul>
+      </div>
+      <div class="total">
+        <h1 class="total__spent"></h1>
+        <div class="total__difference">
+          <p class="difference__percent"></p>
+          <p>from last month</p>
+        </div>
+      </div>
+    </div>
+  </main>
 
-  Spending - Last 7 days
+  <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
+    <p>Coded by <a href="#">Your Name Here</a>.</p>
+  </footer>
 
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <script src="index.js"></script>
 </body>
+
 </html>
