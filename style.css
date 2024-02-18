@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --ff-primary: 'DM Sans', sans-serif;
+
+  --fs-xl: 2.75rem;
+  --fs-lg: 2rem;
+  --fs-md: 1rem;
+
+  --fw-bold: 700;
+  --fw-regular: 400;
+
+  --clr-primary-softred: hsl(10, 79%, 65%);
+  --clr-primary-cyan: hsl(186, 34%, 60%);
+
+  --clr-neutral-lightest: hsl(33, 100%, 98%);
+  --clr-neutral-light: hsl(27, 66%, 92%);
+  --clr-neutral-darkest: hsl(28, 10%, 53%);
+  --clr-neutral-dark: hsl(25, 47%, 15%);
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-regular);
+}
