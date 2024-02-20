@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://your-solution-url.com)
-- Live Site URL: [Github Pages](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/expenses-chart-component-using-flexbox-Tn6DxlU3uk)
+- Live Site URL: [Github Pages](https://hadreemustaffa.github.io/expenses-chart-component/)
 
 ## My process
 
