@@ -39,9 +39,10 @@ h6 {
 :root {
   --ff-primary: 'DM Sans', sans-serif;
 
-  --fs-xl: 2.75rem;
-  --fs-lg: 2rem;
+  --fs-xl: 1.75rem;
+  --fs-lg: 1.5rem;
   --fs-md: 1rem;
+  --fs-sm: 0.75rem;
 
   --fw-bold: 700;
   --fw-regular: 400;
@@ -51,8 +52,26 @@ h6 {
 
   --clr-neutral-lightest: hsl(33, 100%, 98%);
   --clr-neutral-light: hsl(27, 66%, 92%);
-  --clr-neutral-darkest: hsl(28, 10%, 53%);
-  --clr-neutral-dark: hsl(25, 47%, 15%);
+  --clr-neutral-darkest: hsl(25, 47%, 15%);
+  --clr-neutral-dark: hsl(28, 10%, 53%);
+}
+
+h1 {
+  font-size: var(--fs-xl);
+  line-height: 1;
+}
+h2 {
+  font-size: var(--fs-lg);
+}
+
+h1,
+h2:not(.balance__text h2),
+.total__difference-percent {
+  color: var(--clr-neutral-darkest);
+}
+
+.chart__bar-day {
+  font-size: var(--fs-sm);
 }
 
 body {
@@ -60,6 +79,7 @@ body {
   font-size: var(--fs-md);
   font-weight: var(--fw-regular);
   background-color: var(--clr-neutral-light);
+  color: var(--clr-neutral-dark);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,7 +89,8 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
+  margin: 1rem;
 }
 
 .balance {
@@ -78,7 +99,8 @@ main {
   justify-content: space-between;
   align-items: center;
   background-color: var(--clr-primary-softred);
-  padding: 2rem;
+  color: var(--clr-neutral-lightest);
+  padding: 1.5rem;
   border-radius: 1rem;
 }
 
@@ -86,17 +108,23 @@ main {
   display: flex;
   flex-direction: column;
   background-color: var(--clr-neutral-lightest);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 1rem;
+}
+
+.info__chart {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .info__chart-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.6rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid hsla(10, 79%, 65%, 0.25);
 }
 
 .info__chart-bar .chart__bar-container {
@@ -104,14 +132,13 @@ main {
   flex-direction: column;
   justify-content: end;
   align-items: center;
-  width: 44px;
-  height: 200px;
+  width: 36px;
+  height: 150px;
 }
 
-.info__chart-bar .chart__bar-block {
+.chart__bar-block {
   position: relative;
   width: 100%;
-  height: 50px;
   border-radius: 5px;
   background-color: var(--clr-primary-softred);
 }
@@ -123,10 +150,20 @@ main {
   translate: -50% 0;
   padding: 0.5rem;
   border-radius: 5px;
-  background-color: var(--clr-neutral-dark);
+  background-color: var(--clr-neutral-darkest);
   color: var(--clr-neutral-lightest);
   opacity: 0;
   transition: opacity 0.25s ease;
+  z-index: 10;
+  box-shadow: 0 0 10px 0px var(--clr-neutral-dark);
+}
+
+.chart__bar-block:hover {
+  cursor: pointer;
+  background-color: hsl(10, 79%, 75%);
+}
+.chart__bar-block:hover .chart__bar-total {
+  opacity: 1;
 }
 
 .total {
@@ -136,9 +173,63 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+.total__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 .total__difference {
   text-align: right;
+  align-self: flex-end;
 }
 .total__difference-percent {
+  color: var(--clr-neutral-darkest);
   font-weight: var(--fw-bold);
+}
+
+.attribution {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+  flex-wrap: wrap;
+  font-size: var(--fs-sm);
+}
+.attribution a {
+  color: var(--clr-neutral-darkest);
+}
+.attribution a:hover {
+  color: var(--clr-primary-softred);
+}
+
+@media (min-width: 36rem) {
+  :root {
+    --fs-xl: 2.75rem;
+    --fs-lg: 1.85rem;
+    --fs-sm: 1rem;
+  }
+
+  .balance {
+    padding: 1.5rem 2rem;
+  }
+  .info {
+    padding: 2rem 2.5rem 3rem;
+  }
+
+  .info__chart-bar {
+    gap: 1rem;
+  }
+
+  .info__chart-bar .chart__bar-container {
+    width: 50px;
+  }
+}
+
+/* utility classes */
+.max {
+  background-color: var(--clr-primary-cyan);
+}
+.max:hover {
+  background-color: hsl(187, 49%, 80%);
 }
