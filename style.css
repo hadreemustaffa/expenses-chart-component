@@ -129,7 +129,7 @@ main {
 
 .info__chart-bar .chart__bar-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: end;
   align-items: center;
   width: 36px;
@@ -158,11 +158,16 @@ main {
   box-shadow: 0 0 10px 0px var(--clr-neutral-dark);
 }
 
-.chart__bar-block:hover {
+.chart__bar-container:hover {
   cursor: pointer;
+}
+.chart__bar-container:hover .chart__bar-block {
   background-color: hsl(10, 79%, 75%);
 }
-.chart__bar-block:hover .chart__bar-total {
+.chart__bar-container:hover .chart__bar-total {
+  opacity: 1;
+}
+.chart__bar-container:focus .chart__bar-total {
   opacity: 1;
 }
 
@@ -230,6 +235,6 @@ main {
 .max {
   background-color: var(--clr-primary-cyan);
 }
-.max:hover {
+.chart__bar-container:hover .max {
   background-color: hsl(187, 49%, 80%);
 }
